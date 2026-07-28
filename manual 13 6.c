@@ -1,0 +1,29 @@
+#include <stdio.h> 
+void Fibonacci_sequence(int n); 
+int main() {
+    int term; 
+    printf("Enter the number of terms >>  "); 
+    scanf("%d", &term); 
+    printf("1st %dth terms of Fibonacci Sequence are:"); 
+    Fibonacci_sequence(term); 
+    return 0; 
+}
+void Fibonacci_sequence(int n) {
+    int first = 1, second = 1, next, i; 
+    if (n <= 0) {
+        return; 
+    }
+    if (n >= 1) {
+        printf("%d ", first); 
+    }
+    if (n >= 2) {
+        printf("%d ", second); 
+    }
+    for (i = 3; i <= n; i++) {
+        next = first + second; 
+        printf("%d  ", next); 
+        first = second; 
+        second = next; 
+    }
+    printf("\n"); 
+} 
